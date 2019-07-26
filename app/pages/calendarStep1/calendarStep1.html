@@ -37,8 +37,39 @@
 
     </div>
     <div class="step1box__meetinginfo--box">
+        <div class="row">
+            <p>Select Date</p>
+        </div>
         <div style="display:inline-block; min-height:290px;">
-            <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+            <div uib-datepicker ng-model="step1.eventDetails.user.selectedDate"
+                datepicker-options="step1.eventDateOptions" class="well well-sm"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <timezone-selector ng-model="selectedTimezone"></timezone-selector>
+            </div>
+        </div>
+    </div>
+
+    <div class="step1box__meetinginfo--box" ng-if="step1.eventDetails.user.selectedDate">
+        <div class="row col-lg-12">
+            <p>Select Time</p>
+        </div>
+        <div class="row col-lg-12">
+            <p>{{step1.eventDetails.user.selectedDate | date: 'EEEE, MMM d'}}</p>
+        </div>
+        <div class="row col-lg-12">
+            <ul class="time-slot-list list-group">
+                <li class="list-group-item" ng-class="{'active' : step1.eventDetails.user.selectedTime ===  item}"
+                    ng-click="step1.selectTime(item)" ng-repeat="item in step1.timeslots track by $index">{{item}}</li>
+            </ul>
+        </div>
+
+        <div class="row col-lg-12">
+            <button type="button" ng-click="step1.confirm()" class="step2box__submitform--btn">
+                Confirm
+            </button>
         </div>
     </div>
 </div>

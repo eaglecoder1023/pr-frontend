@@ -10,6 +10,7 @@
   "devDependencies": {
     "@uirouter/angularjs": "^1.0.22",
     "angular": "^1.6.4",
+    "angular-timezone-selector": "^1.2.1",
     "angular-ui-bootstrap": "^2.5.6",
     "babel-cli": "^6.24.1",
     "babel-loader": "^6.4.1",
@@ -19,6 +20,8 @@
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.0",
     "inject-loader": "^3.0.0",
+    "intl-tel-input": "^6.0.6",
+    "jquery": "^2.1.4",
     "live-server": "^1.2.0",
     "node-sass": "^4.12.0",
     "raw-loader": "^0.5.1",

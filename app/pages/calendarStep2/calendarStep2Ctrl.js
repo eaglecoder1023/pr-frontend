@@ -6,17 +6,15 @@ class CalendarStep2Controller {
      * Define required services
      * @return {undefined} undefined
      */
-    constructor() {
-        console.log('input bindings arent defined!', this.someInput)
+    constructor($state) {
+        this.$state = $state;
     }
 
-    /**
-     * Calls someOutput with the value of someInput put in fancyFunction
-     * @return {undefined} undefined
-     */
-    click() {
-        console.log('doing super things')
-        this.someOutput({ value: fancyFunction(this.someInput, 3) })
+    save() {
+        window.sessionStorage.setItem('user-data', JSON.stringify(this.eventDetails));
+        setTimeout(() => {
+            this.$state.go("step3");
+        }, 0);
     }
 
     /**
@@ -24,8 +22,13 @@ class CalendarStep2Controller {
      * @return {undefined} undefined
      */
     $onInit() {
-
+        const eventDetails = window.sessionStorage.getItem('user-data');
+        if (eventDetails) {
+            this.eventDetails = JSON.parse(eventDetails);
+        }
     }
 }
+
+CalendarStep2Controller.$inject = ['$state'];
 
 export { CalendarStep2Controller } 

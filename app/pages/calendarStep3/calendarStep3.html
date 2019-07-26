@@ -5,45 +5,45 @@
     </h2>
 
     <h4>
-        Subheadline Text Goes Here
+        {{step3.eventDetails.title}}
     </h4>
 
     <div class="step3box__video--box">
-        <img src="assets/images/videoimage.png">
+        <img src="{{step3.eventDetails.videoUrl}}">
     </div>
 
     <ul class="step3box__Time--listing">
         <li>
             <img src="assets/images/tl-tickarrow.png">
-            <span>30 Minutes Consultation</span>
+            <span>{{step3.eventDetails.duration}}</span>
         </li>
         <li>
             <img src="assets/images/tl-Location.png">
-            <span>Zoom</span>
+            <span>{{step3.eventDetails.location}}</span>
         </li>
         <li>
             <div class="step3box__stetl-box">
                 <img src="assets/images/tl-clock.png">
-                <span>9:00 AM</span>
+                <span>{{step3.eventDetails.user.selectedTime}}</span>
             </div>
             <div class="step3box__stetl-box">
                 <img src="assets/images/tl-earth.png">
-                <span>EST</span>
+                <span>{{step3.eventDetails.user.selectedTimezone}}</span>
             </div>
             <div class="step3box__stetl-box">
                 <img src="assets/images/tl-calendar.png">
-                <span>Aug, 7th 2019</span>
+                <span>{{step3.eventDetails.user.selectedDate | date: 'MMM, dd yyyy'}}</span>
             </div>
         </li>
     </ul>
 
     <div class="step3box__dropdown--box">
-        <div class="step3box__dropdown--btn">
+        <div class="step3box__dropdown--btn" ng-click="showMenu = !showMenu">
             <img src="../assets/images/db-calendar-icon.png">
             <span>Add to calendar</span>
             <div class="downarrow"></div>
         </div>
-        <ul class="step3box__dropdown--value" style="display: none">
+        <ul class="step3box__dropdown--value" ng-show="showMenu">
             <li>
                 <img src="../assets/images/sv-google-icon.png">
                 <span>Google Calendar</span>

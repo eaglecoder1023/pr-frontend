@@ -7,7 +7,6 @@ class CalendarStep3Controller {
      * @return {undefined} undefined
      */
     constructor() {
-        console.log('input bindings arent defined!', this.someInput)
     }
 
     /**
@@ -15,8 +14,6 @@ class CalendarStep3Controller {
      * @return {undefined} undefined
      */
     click() {
-        console.log('doing super things')
-        this.someOutput({ value: fancyFunction(this.someInput, 3) })
     }
 
     /**
@@ -24,7 +21,10 @@ class CalendarStep3Controller {
      * @return {undefined} undefined
      */
     $onInit() {
-
+        const eventDetails = window.sessionStorage.getItem('user-data');
+        if (eventDetails) {
+            this.eventDetails = JSON.parse(eventDetails);
+        }
     }
 }
 
