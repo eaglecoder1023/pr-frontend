@@ -1,0 +1,44 @@
+<div class="step1box">
+    <div class="step1box__meetinginfo--box">
+
+        <div class="step1box__meeting--personobx">
+            <div class="step1box__mpp--imagebox">
+                <img src="{{step1.eventDetails.presentorAvatar}}">
+            </div>
+            <div class="step1box__mpp--contentbox">
+                <h3>{{step1.eventDetails.presentor}}</h3>
+                <h4>
+                    <img src="assets/images/mpu-clock-icon.png">
+                    <span>{{step1.eventDetails.duration}}</span>
+                </h4>
+            </div>
+        </div>
+
+        <div class="step1box__meeting--title">
+            {{step1.eventDetails.title}}
+        </div>
+
+        <ul class="step1box__meeting--linkdec">
+            <li>
+                <img src="assets/images/meeting-link-icon.png">
+                <span>{{step1.eventDetails.location}}</span>
+            </li>
+            <li>
+                <img src="assets/images/meeting-dec-icon.png">
+                <span>
+                    {{step1.eventDetails.description}}
+                </span>
+            </li>
+        </ul>
+
+        <div class="step1box__meeting--videobox">
+            <img src="{{step1.eventDetails.videoUrl}}">
+        </div>
+
+    </div>
+    <div class="step1box__meetinginfo--box">
+        <div style="display:inline-block; min-height:290px;">
+            <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+        </div>
+    </div>
+</div>

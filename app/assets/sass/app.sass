@@ -1,0 +1,291 @@
+@charset "UTF-8"
+
+html, body, ul, ol
+  margin: 0
+  padding: 0
+
+body
+  font-family: "Open Sans", sans-serif
+  font-weight: normal
+  background: #f0f4f7
+  min-height: 100vh
+
+.card
+  width: 100%
+  float: left
+  margin: 45px calc((100% - 800px) / 2) 0
+  max-width: 800px
+  min-height: 610px
+  border-radius: 10px
+  background: #ffffff
+  -webkit-box-shadow: 0px 4px 10px 0px #d9e1e6
+  -moz-box-shadow: 0px 4px 10px 0px #d9e1e6
+  box-shadow: 0px 4px 10px 0px #d9e1e6
+
+/* Start of Step 3 Page CSS
+
+.step1box
+  width: 100%
+  float: left
+
+.step1box__meetinginfo--box
+  width: 400px
+  float: left
+  padding: 30px
+  border-right: 1px solid #f0f4f7
+
+.step2box
+  width: 100%
+  max-width: 450px
+  float: left
+  margin: 0 calc((100% - 450px) / 2)
+  padding: 20px 0
+
+.step2box__box--title
+  width: 100%
+  float: left
+  color: #4d5055
+  font-size: 19px
+  font-weight: 600
+  text-align: center
+  border-bottom: 1px solid #f0f4f7
+  padding-bottom: 20px
+  margin-bottom: 20px
+  span
+    position: relative
+    top: 2px
+    margin-left: 9px
+
+.step2box__input--form
+  width: 100%
+  float: left
+  li
+    list-style: none
+    float: left
+    width: 100%
+    margin-bottom: 20px
+
+.step2box__label--box
+  float: left
+  width: 100%
+  font-size: 14px
+  font-weight: 600
+  margin-bottom: 3px
+  b
+    color: #f00
+
+.step2box__textfld--box
+  float: left
+  width: 100%
+  font-size: 14px
+  border: 1px solid #e8edf0
+  padding-left: 10px
+  height: 46px
+  font-weight: 600
+  color: #666666
+  outline: none !important
+  border-radius: 7px
+
+.step2box__dropdown--box
+  float: left
+  width: 100%
+  font-size: 14px
+  border: 1px solid #e8edf0
+  height: 46px
+  border-radius: 7px
+  overflow: hidden
+
+.step2box__dropdown--textfld
+  float: left
+  width: calc(100% - 46px)
+  font-size: 14px
+  padding-left: 10px
+  height: 44px
+  font-weight: 600
+  color: #666666
+  outline: none !important
+  border: none !important
+
+.step2box__dropdown
+  width: 46px
+  height: 44px
+  outline: none !important
+  border: none !important
+
+.step2box__checkbox
+  height: 24px
+  width: 24px
+  margin: 0 !important
+  float: left
+  position: relative
+  &::after
+    content: ""
+    height: 24px
+    width: 24px
+    background: #fff
+    border: 1px solid #e8e8e8
+    position: absolute
+    top: 0px
+    left: 0px
+  &::before
+    content: "✔"
+    position: absolute
+    top: 2px
+    left: 7px
+    z-index: 1
+    display: none
+    color: #ff950a
+  &:checked::before
+    display: block
+
+.step2box__label--checkbox
+  color: #3e3e3e
+  font-size: 13px
+  margin: 0
+  font-weight: bold
+  float: left
+  padding: 3px 10px
+  b
+    color: #f00
+
+.step2box__submitform--btn
+  width: 100%
+  float: left
+  height: 55px
+  font-size: 22px
+  text-transform: uppercase
+  font-weight: 600
+  color: #fff
+  padding: 8px 10px
+  border-radius: 8px
+  border: none
+  background: #ff9913
+  outline: none !important
+
+.step3box
+  max-width: 355px
+  float: left
+  margin: 0 calc((100% - 355px) / 2)
+  padding: 30px 0
+  h2
+    margin: 0
+    font-size: 22px
+    color: #4d5055
+    font-weight: 600
+    span
+      margin-left: 7px
+      position: relative
+      position: relative
+      top: 1px
+  h4
+    margin: 10px 0 15px
+    font-size: 18px
+    text-align: center
+    color: #4d5055
+    font-weight: 600
+    text-align: center
+
+.step3box__video--box
+  width: 100%
+  img
+    width: 100%
+
+.step3box__Time--listing
+  width: 100%
+  margin-top: 20px
+  float: left
+  li
+    width: 100%
+    list-style: none
+    float: left
+    font-size: 16px
+    color: #333333
+    margin-bottom: 10px
+    font-weight: 400
+    float: left
+    img
+      margin-top: -1px
+      margin-right: 6px
+
+.step3box .step3box__stetl-box
+  float: left
+  margin-right: 15px
+
+.step3box__dropdown--box
+  width: 100%
+  float: left
+  margin-top: 15px
+  margin-bottom: 15px
+  position: relative
+
+.step3box__dropdown--btn
+  width: 100%
+  float: left
+  height: 45px
+  background: #00a0af
+  font-size: 20px
+  text-transform: uppercase
+  font-weight: 600
+  color: #fff
+  padding: 8px 10px
+  border-radius: 7px
+  border-bottom: 1px solid #007a85
+  img
+    position: relative
+    top: 4px
+    float: left
+    margin-right: 9px
+
+.step3box .downarrow
+  width: 0
+  height: 0
+  float: right
+  margin-top: 12px
+  border-style: solid
+  border-width: 6px 5px 0 5px
+  border-color: #fff transparent transparent transparent
+
+.step3box__dropdown--value
+  width: 100%
+  position: absolute
+  top: 45px
+  border-radius: 7px
+  background: #fff
+  -webkit-box-shadow: 0px 4px 10px 0px #d9e1e6
+  -moz-box-shadow: 0px 4px 10px 0px #d9e1e6
+  box-shadow: 0px 4px 10px 0px #d9e1e6
+  li
+    width: 100%
+    font-size: 19px
+    font-weight: 600
+    padding: 11px 14px
+    list-style: none
+    border-bottom: 1px solid #ccc
+    img
+      float: left
+      margin-right: 8px
+      width: 21px
+      margin-top: 2px
+
+.step3box__website--btn
+  width: 100%
+  text-align: center
+  height: 45px
+  float: left
+  padding: 8px 0
+  background: #ffae2a
+  border-bottom: 1px solid #d58b12
+  border-radius: 7px
+  font-size: 20px
+  font-weight: 600
+  color: #ffffff !important
+  text-transform: uppercase
+  text-decoration: none !important
+  margin-bottom: 15px
+
+.step3box__footer--text
+  text-align: center
+  float: left
+  font-size: 16px
+  color: #333333
+  padding: 0 20px
