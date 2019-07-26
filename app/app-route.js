@@ -1,5 +1,9 @@
 'use strict';
 
+/***
+ * Routing Configurations
+ * All routes of application
+ */
 function appRoutingConfigs($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
 

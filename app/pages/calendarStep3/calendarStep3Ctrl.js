@@ -1,5 +1,5 @@
 /**
- * Step1 Controller
+ * Step3 Controller
  */
 class CalendarStep3Controller {
     /**
@@ -7,13 +7,6 @@ class CalendarStep3Controller {
      * @return {undefined} undefined
      */
     constructor() {
-    }
-
-    /**
-     * Calls someOutput with the value of someInput put in fancyFunction
-     * @return {undefined} undefined
-     */
-    click() {
     }
 
     /**

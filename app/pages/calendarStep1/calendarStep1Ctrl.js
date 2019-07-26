@@ -41,6 +41,10 @@ class CalendarStep1Controller {
         }, 0);
     }
 
+    /**
+     * Event Detail Initail Object
+     */
+
     setEventDetails() {
         this.eventDetails = {
             presentor: 'David Smith',

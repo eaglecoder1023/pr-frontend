@@ -10,6 +10,10 @@ class CalendarStep2Controller {
         this.$state = $state;
     }
 
+    /**
+     * Step2 Submit Event
+     * Store latest data and route to next step
+     */
     save() {
         window.sessionStorage.setItem('user-data', JSON.stringify(this.eventDetails));
         setTimeout(() => {

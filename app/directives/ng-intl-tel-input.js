@@ -1,3 +1,6 @@
+/**
+ * Directive for Phone Number
+ */
 angular.module('ngIntlTelInput', []); angular.module('ngIntlTelInput')
   .provider('ngIntlTelInput', function () {
     var me = this;
