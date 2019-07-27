@@ -10,7 +10,6 @@
   "devDependencies": {
     "@uirouter/angularjs": "^1.0.22",
     "angular": "^1.6.4",
-    "angular-timezone-selector": "^1.2.1",
     "angular-ui-bootstrap": "^2.5.6",
     "babel-cli": "^6.24.1",
     "babel-loader": "^6.4.1",

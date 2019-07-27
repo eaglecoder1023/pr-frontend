@@ -18,7 +18,7 @@ import { CalendarStep3Controller } from './pages/calendarStep3/calendarStep3Ctrl
 import { appRoutingConfigs } from './app-route';
 import './assets/sass/app.sass';
 import './directives/ng-intl-tel-input';
-// import 'angular-timezone-selector/build/angular-timezone-selector';
+import './directives/angular-timezone-selector';
 
 /**
  * @class Has fields addValue and fancyValue. Manages state between superAwesomeComponents
@@ -28,7 +28,7 @@ class AppController {
   }
 }
 
-angular.module('calendarApp', [uirouter, datepicker, tooltip, 'ngIntlTelInput'])
+angular.module('calendarApp', [uirouter, datepicker, tooltip, 'ngIntlTelInput', 'angular-timezone-selector'])
   .controller('CalendarStep1Controller', CalendarStep1Controller)
   .controller('CalendarStep2Controller', CalendarStep2Controller)
   .controller('CalendarStep3Controller', CalendarStep3Controller)

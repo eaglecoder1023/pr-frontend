@@ -56,7 +56,7 @@ class CalendarStep1Controller {
             videoUrl: 'assets/images/videoimage.png',
             user: {
                 selectedDate: null,
-                selectedTimezone: null,
+                selectedTimezone: moment.tz.guess(),
                 selectedTime: null
             }
         }
