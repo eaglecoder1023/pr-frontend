@@ -34,3 +34,27 @@ angular.module('calendarApp', [uirouter, datepicker, tooltip, 'ngIntlTelInput', 
   .controller('CalendarStep3Controller', CalendarStep3Controller)
   .config(appRoutingConfigs)
   .controller('AppController', AppController)
+
+  .directive('customScroll', function ($log) {
+    return {
+      restrict: 'A',
+      scope: {
+        config: '&customScroll'
+      },
+      link: function postLink(scope, iElement, iAttrs, controller, transcludeFn) {
+        var config = scope.config();
+        $log.debug('config: ', config);
+        // create scroll elemnt
+        var elem = iElement.mCustomScrollbar({
+          autoHideScrollbar: config.autoHide,
+          theme: config.theme,
+          advanced: {
+            updateOnImageLoad: true
+          },
+        });
+        // the live options object
+        var mObject = elem.data('mCS');
+        $log.debug('elem: ', mObject.opt);
+      }
+    };
+  });

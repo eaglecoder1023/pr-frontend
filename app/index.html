@@ -6,21 +6,25 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/intlTelInput.css" rel="stylesheet">
+  <link href="assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
 </head>
 
 <body ng-app="calendarApp" ng-controller="AppController as app" ng-cloak>
-  <div class="card">
-    <ui-view></ui-view>
-  </div>
+  <ui-view></ui-view>
 </body>
+
 <tail>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.0/moment-timezone-with-data.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.js"></script>
+  <script src="assets/js/chosen.jquery.js"></script>
+  <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="index-bundle.js"></script>
+  <script>
+   // $('.step1box__time--listing').mCustomScrollbar({ axis: "y" });
+  </script>
 </tail>
 
 </html>

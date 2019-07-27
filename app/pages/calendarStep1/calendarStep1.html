@@ -1,74 +1,74 @@
-<div class="step1box">
-    <div class="step1box__meetinginfo--box">
+<div class="card" ng-class="{'withtime' : step1.eventDetails.user.selectedDate}">
+    <div class="step1box">
+        <div class="step1box__meetinginfo--box">
 
-        <div class="step1box__meeting--personobx">
-            <div class="step1box__mpp--imagebox">
-                <img src="{{step1.eventDetails.presentorAvatar}}">
+            <div class="step1box__meeting--personobx">
+                <div class="step1box__mpp--imagebox">
+                    <img src="{{step1.eventDetails.presentorAvatar}}">
+                </div>
+                <div class="step1box__mpp--contentbox">
+                    <h3>{{step1.eventDetails.presentor}}</h3>
+                    <h4>
+                        <img src="assets/images/mpu-clock-icon.png">
+                        <span>{{step1.eventDetails.duration}}</span>
+                    </h4>
+                </div>
             </div>
-            <div class="step1box__mpp--contentbox">
-                <h3>{{step1.eventDetails.presentor}}</h3>
-                <h4>
-                    <img src="assets/images/mpu-clock-icon.png">
-                    <span>{{step1.eventDetails.duration}}</span>
-                </h4>
+
+            <div class="step1box__meeting--title">
+                {{step1.eventDetails.title}}
             </div>
-        </div>
 
-        <div class="step1box__meeting--title">
-            {{step1.eventDetails.title}}
-        </div>
+            <ul class="step1box__meeting--linkdec">
+                <li>
+                    <img src="assets/images/meeting-link-icon.png">
+                    <span>{{step1.eventDetails.location}}</span>
+                </li>
+                <li>
+                    <img src="assets/images/meeting-dec-icon.png">
+                    <span>
+                        {{step1.eventDetails.description}}
+                    </span>
+                </li>
+            </ul>
 
-        <ul class="step1box__meeting--linkdec">
-            <li>
-                <img src="assets/images/meeting-link-icon.png">
-                <span>{{step1.eventDetails.location}}</span>
-            </li>
-            <li>
-                <img src="assets/images/meeting-dec-icon.png">
-                <span>
-                    {{step1.eventDetails.description}}
-                </span>
-            </li>
-        </ul>
+            <div class="step1box__meeting--videobox">
+                <img src="{{step1.eventDetails.videoUrl}}">
+            </div>
 
-        <div class="step1box__meeting--videobox">
-            <img src="{{step1.eventDetails.videoUrl}}">
         </div>
-
-    </div>
-    <div class="step1box__meetinginfo--box">
-        <div class="row">
-            <p>Select Date</p>
-        </div>
-        <div style="display:inline-block; min-height:290px;">
-            <div uib-datepicker ng-model="step1.eventDetails.user.selectedDate"
-                datepicker-options="step1.eventDateOptions" class="well well-sm"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
+        <div class="step1box__selectdate--box">
+            <div class="step1box__st--title">
+                <img src="assets/images/st-calendar-icon.png">
+                <span>Select a Date</span>
+            </div>
+            <div style="display:inline-block; min-height:290px;">
+                <div uib-datepicker ng-model="step1.eventDetails.user.selectedDate"
+                    datepicker-options="step1.eventDateOptions" class="well well-sm">
+                </div>
+            </div>
+            <div class="step1__selectimezone--box">
                 <timezone-selector ng-model="step1.eventDetails.user.selectedTimezone"></timezone-selector>
             </div>
         </div>
-    </div>
-
-    <div class="step1box__meetinginfo--box" ng-if="step1.eventDetails.user.selectedDate">
-        <div class="row col-lg-12">
-            <p>Select Time</p>
-        </div>
-        <div class="row col-lg-12">
-            <p>{{step1.eventDetails.user.selectedDate | date: 'EEEE, MMM d'}}</p>
-        </div>
-        <div class="row col-lg-12">
-            <ul class="time-slot-list list-group">
+        <div class="step1box__selecttime--box" ng-if="step1.eventDetails.user.selectedDate">
+            <div class="step1box__selecttime--backbtn">
+                <img src="../assets/images/backbtn-icon.png">
+            </div>
+            <div class="step1box__st--title">
+                <img src="../assets/images/st-time-icon.png">
+                <span>Select a Time</span>
+            </div>
+            <div class="step1box__day--box">
+                {{step1.eventDetails.user.selectedDate | date: 'EEEE, MMM d'}}
+            </div>
+            <ul class="step1box__time--listing" custom-scroll="{ 'theme': 'dark'}">
                 <li class="list-group-item" ng-class="{'active' : step1.eventDetails.user.selectedTime ===  item}"
                     ng-click="step1.selectTime(item)" ng-repeat="item in step1.timeslots track by $index">{{item}}</li>
             </ul>
-        </div>
-
-        <div class="row col-lg-12">
             <button type="button" ng-click="step1.confirm()" class="step2box__submitform--btn">
-                Confirm
+                <img src="../assets/images/confirmbtn-icon.png">
+                <span>Confirm</span>
             </button>
         </div>
     </div>

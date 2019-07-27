@@ -10,29 +10,192 @@ body
   background: #f0f4f7
   min-height: 100vh
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 
+  font-family: "Open Sans", sans-serif
+  font-weight: normal
+  line-height: normal
+
 .card
   width: 100%
   float: left
   margin: 45px calc((100% - 800px) / 2) 0
   max-width: 800px
-  min-height: 610px
   border-radius: 10px
   background: #ffffff
   -webkit-box-shadow: 0px 4px 10px 0px #d9e1e6
   -moz-box-shadow: 0px 4px 10px 0px #d9e1e6
   box-shadow: 0px 4px 10px 0px #d9e1e6
 
-/* Start of Step 3 Page CSS
+.card.withtime
+    max-width: 1080px
+    min-height: 610px
+    overflow: hidden
+    margin: 45px calc((100% - 1080px) / 2) 0
+
+/* Start of Step 1 Page CSS
 
 .step1box
-  width: 100%
-  float: left
+    width: 100%
+    float: left
 
-.step1box__meetinginfo--box
-  width: 400px
-  float: left
-  padding: 30px
-  border-right: 1px solid #f0f4f7
+    &__meetinginfo--box
+        width: 399px
+        float: left
+        padding: 30px
+        background: #fcfdfe
+        border-radius: 10px 0 0 10px
+
+    &__meeting--personbox
+        float: left
+        width: 100%
+        margin-bottom: 25px
+        
+    &__mpp--imagebox
+        float: left
+        width: 60px
+        margin-right: 15px  
+    
+    &__mpp--contentbox
+        float: left
+        width: calc(100% - 75px)
+        padding: 10px 0
+
+        h3
+            margin: 0
+            font-size: 17px
+            color: #4d5055
+        
+        h4
+            margin: 5px 0 0
+            font-size: 15px
+            color: #4d5055
+
+            img
+                float: left
+                margin-top: 1px
+                margin-right: 4px
+    
+    &__meeting--title
+        float: left
+        font-size: 22px
+        color: #4d5055
+        font-weight: 600
+        margin-bottom: 15px
+        width: 100%
+    
+    &__meeting--linkdec
+        width: 100%
+        float: left
+
+        li
+            float: left
+            list-style: none
+            width: 100%
+            margin-bottom: 15px
+            word-break: break-all
+
+            img
+                float: left
+                margin-right: 5px
+            
+            span
+                float: right
+                width: calc(100% - 28px)
+                color: #4d5055
+                font-size: 15px
+    
+    .customimagepadding
+        position: relative
+        top: 4px
+
+    &__meeting--videobox
+        width: 100%
+        float: right
+        padding: 13px 20px
+
+        img, video
+          width: 100%
+
+    &__selectdate--box
+        width: 401px
+        float: left
+        padding: 20px 22px 30px
+        border-left: 1px solid #f0f4f7
+      
+    &__selecttime--box
+        width: 280px
+        float: right
+        min-height: 550px
+        border-left: 1px solid #f0f4f7
+        padding: 20px 20px 30px
+
+    &__st--title
+        width: 100%
+        float: left
+        font-size: 19px
+        color: #4d5055
+        text-align: center
+        font-weight: 600
+        border-bottom: 1px solid #f0f4f7
+        padding-bottom: 18px
+
+        img
+            margin-right: 3px
+            top: - 2px
+            position: relative
+
+    &__day--box
+        width: 100%
+        float: left
+        text-align: center
+        font-weight: bold
+        font-size: 18px
+        color: #00919e
+        padding-bottom: 18px
+        margin: 20px 0
+        border-bottom: 1px solid #f0f4f7
+
+    &__time--listing
+        width: 100%
+        float: left
+        height: 350px
+        margin-bottom: 30px
+        overflow: auto
+
+        li
+            width: calc(100% - 20px)
+            float: left
+            text-align: center
+            list-style: none
+            border: 1px solid #00919e
+            font-size: 17px
+            color: #4d5055
+            margin: 0 10px
+            margin-bottom: 10px
+            border-radius: 7px
+            padding: 12px 0
+            cursor: pointer
+
+        li:hover, li.active
+            background: #00919e
+            font-weight: bold
+            color: #fff
+
+    &__confirm--btn
+        margin-top: 20px
+        width: 100%
+        float: left
+        height: 50px
+        font-size: 17px
+        text-transform: uppercase
+        color:#fff
+        font-weight: 600
+        border-radius: 7px
+        background: #ff9307
+        border: none
+
+        img
+            margin-right: 5px
 
 .step2box
   width: 100%
@@ -172,13 +335,17 @@ body
     font-size: 22px
     color: #4d5055
     font-weight: 600
+
+    img
+      float: left
+
     span
-      margin-left: 7px
+      margin-left: 5px
       position: relative
       position: relative
-      top: 1px
+      top: -4px
   h4
-    margin: 10px 0 15px
+    margin: 5px 0 15px
     font-size: 18px
     text-align: center
     color: #4d5055
@@ -204,7 +371,7 @@ body
     font-weight: 400
     float: left
     img
-      margin-top: -1px
+      margin-top: -2px
       margin-right: 6px
 
 .step3box .step3box__stetl-box
@@ -261,12 +428,18 @@ body
     padding: 11px 14px
     list-style: none
     border-bottom: 1px solid #ccc
+    cursor: pointer
+
     img
       float: left
       margin-right: 8px
       width: 21px
       margin-top: 2px
 
+  li:hover
+    background: #eee
+
+    
 .step3box__website--btn
   width: 100%
   text-align: center
@@ -299,3 +472,273 @@ input.ng-invalid.ng-touched
   border-color: #a94442
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
+
+.well
+  padding: 0
+  border: none
+  box-shadow: none
+  background: transparent
+  outline: none !important
+
+.well tbody, .well table, .uib-daypicker.ng-scope, .btn
+  outline: none !important
+
+
+.uib-day 
+  margin: 4px
+  display: block
+  float: left
+
+.uib-day:last-child
+  margin-right: 0
+
+.uib-day:first-child
+  margin-left: 0
+
+.btn.btn-default.btn-sm
+  height: 42px
+  width: 42px
+  padding: 0
+  border: none
+  background: transparent
+  border-radius: 100%
+
+.uib-daypicker.ng-scope thead tr:first-child
+  border-bottom: 1px solid #f0f4f7
+  padding: 15px 0
+  float: left
+  width: 100%
+  margin-bottom: 20px
+  position: relative
+
+  th
+    width: 50px
+    float: right
+
+    button
+      width: 100%
+      height: auto
+      background: transparent !important
+      box-shadow: none;
+      
+      span
+        display: none
+  
+  th:nth-child(3)
+    position: absolute
+    right: 0
+
+    button
+      font-size: 20px
+      color: #00919e
+      padding-top: 2px
+
+  th:nth-child(1)
+    position: absolute
+    right: 50px
+    
+    button
+      font-size: 20px
+      color: #00919e
+      padding-top: 2px
+
+  th:nth-child(2)
+    float: left
+    width: calc(100% - 100px)
+
+    button
+      font-size: 18px
+      color: #00919e
+      text-align: left
+      border: none
+      padding: 0
+
+.uib-daypicker.ng-scope thead tr:nth-child(2) th
+  width: calc(100% / 7)
+  float: left
+  font-size: 14px
+  color: #4d5055
+  text-transform: uppercase
+  margin-bottom: 15px
+
+
+.active .text-info, .btn.btn-default.btn-sm span:hover
+  height: 100%
+  width: 100%
+  display: inline-block
+  font-size: 16px
+  font-weight: bold
+  color: #fff !important
+  border-radius: 100%
+  border: 1px solid #00919e  !important
+  padding: 9px
+  background: #00919e !important
+
+.btn.btn-default.btn-sm span
+  height: 100%
+  width: 100%
+  display: inline-block
+  font-size: 16px
+  font-weight: bold
+  color: #00919e
+  border-radius: 100%
+  border: 1px solid #ddeef0
+  padding: 9px
+  background: #f0f9f9
+  
+.btn[disabled].btn-default.btn-sm span
+  height: 100%
+  width: 100%
+  display: inline-block
+  font-size: 16px
+  font-weight: normal
+  color: #4d5055
+  border-radius: 100%
+  border: none
+  padding: 9px
+  background: #fff
+
+.intl-tel-input
+  width: 100%
+
+.step1__selectimezone--box
+  width: 100%
+  float: left
+  margin-top: 10px
+  text-align: center
+
+.step1box__selecttime--backbtn
+    position: absolute
+    left: 30px
+    top: 23px
+    background: #e5f4f5
+    height: 54px
+    width: 30px
+    padding: 19px 0
+    text-align: center
+    border-radius: 4px
+    display: none
+    cursor: pointer
+
+
+
+/* Start of Responsive CSS */
+@media screen and (max-width: 1120px)
+    .card
+        margin: 45px calc((100% - 620px) / 2) 0 !important
+        max-width: 620px !important
+        
+    .step1box__meetinginfo--box
+        width: 100%
+        border: 1px solid #f0f4f7
+
+    .step1box__selectdate--box
+      margin: 0 calc((100% - 401px) / 2)
+      border-left: none
+
+    .card.withtime .step1box__selectdate--box
+        margin: 0
+        border-left: none
+
+    .step1box__mpp--imagebox
+        float: left
+        width: 60px
+        margin: 0 calc((100% - 60px) / 2)
+
+    .step1box__meeting--personbox
+        margin-bottom: 15px
+
+    .step1box__mpp--contentbox
+        float: left
+        width: 100%
+        padding: 10px 0
+        text-align: center
+
+    .step1box__mpp--contentbox h4 img
+        float: none
+        margin-top: -4px
+
+    .step1box__meeting--title
+        text-align: center
+    
+    .step1box__selecttime--box
+        width: 219px
+
+@media screen and (max-width: 660px)
+    .step1box__selecttime--backbtn
+      display: block
+    .card
+        margin: 20px !important
+        max-width: calc(100% - 40px) !important
+
+    .step2box, .step3box
+        max-width: 100%
+        margin: 0
+        padding: 20px
+
+    .step1box__selectdate--box
+      margin: 0 calc((100% - 401px) / 2) !important
+
+    .step3box__footer--text
+        padding: 0
+    
+    .step1box__meetinginfo--box, .step1box__selectdate--box
+        padding: 20px
+
+    .step1box__selecttime--box
+      width: 100%
+      position: fixed
+      top: 0
+      background: #fff
+      right: 0
+
+    .step1box__st--title
+      border-bottom: 0
+      padding-bottom: 0
+
+    .step1box__day--box
+      padding-bottom: 0
+      margin: 7px 0 20px
+      border-bottom: none
+
+@media screen and (max-width: 450px)
+    .card
+        margin: 15px !important
+        max-width: calc(100% - 30px) !important
+
+    .step2box, .step3box
+        padding: 20px 15px
+
+    .step3box__Time--listing li
+        font-size: 15px
+
+    .step3box__Time--listing li img
+        margin-right: 4px
+    
+    .step3box .step3box__stetl-box
+        margin-right: 10px
+
+    .step3box .step3box__stetl-box:nth-child(3)
+        margin: 0
+
+    .step1box__meetinginfo--box, .step1box__selectdate--box
+        padding: 20px 15px
+
+    .btn.btn-default.btn-sm
+      height: 30px
+      width: 30px
+
+    .uib-day
+      margin: 3px
+
+    .btn[disabled].btn-default.btn-sm span, .active .text-info, .btn.btn-default.btn-sm span:hover, .btn.btn-default.btn-sm span
+      font-size: 13px
+      padding: 5px
+      font-weight: normal !important
+
+    .step1box__selectdate--box
+      margin: 0 calc((100% - 290px) / 2) !important
+      width: 290px
+ 
+
+/* End of Responsive CSS */

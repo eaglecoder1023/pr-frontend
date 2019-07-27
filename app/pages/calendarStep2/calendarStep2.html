@@ -1,59 +1,64 @@
-<div class="step2box">
+<div class="card">
+    <div class="step2box">
 
-    <div class="step2box__box--title">
-        <img src="assets/images/bt_page_title-icon.png">
-        <span>Fill In Your Information Below</span>
+        <div class="step2box__box--title">
+            <img src="assets/images/bt_page_title-icon.png">
+            <span>Fill In Your Information Below</span>
+        </div>
+        <form name="frmStep2" novalidate ng-submit="frmStep2.$valid && step2.save()">
+
+            <ul class="step2box__input--form">
+
+                <li>
+                    <label class="step2box__label--box">Your Name <b>*</b></label>
+                    <input type="text" class="step2box__textfld--box" name="name"
+                        ng-model="step2.eventDetails.user.name" ng-required="true" placeholder="Type in Your Full Name"
+                        uib-tooltip="Name is required" tooltip-placement="bottom-left"
+                        tooltip-enable="frmStep2.name.$invalid && frmStep2.name.$touched">
+                </li>
+
+                <li>
+                    <label class="step2box__label--box">Email <b>*</b></label>
+                    <input type="text" class="step2box__textfld--box" ng-model="step2.eventDetails.user.email"
+                        name="email" required placeholder="Type in Your Email Address" uib-tooltip="Email is required"
+                        tooltip-placement="bottom-left"
+                        tooltip-enable="frmStep2.email.$invalid && frmStep2.email.$touched">
+                </li>
+
+                <li>
+                    <label class="step2box__label--box">Phone Number <b>*</b></label>
+                    <input type="text" class="step2box__textfld--box" name="phoneNumber"
+                        ng-model="step2.eventDetails.user.phoneNumber" ng-intl-tel-input required
+                        uib-tooltip="Phone number is required" tooltip-placement="bottom-left"
+                        tooltip-enable="frmStep2.phoneNumber.$invalid && frmStep2.phoneNumber.$touched">
+                </li>
+
+                <li>
+                    <input type="checkbox" class="step2box__checkbox" ng-model="step2.acceptCondition"
+                        id="addinfocheckbox">
+                    <label class="step2box__label--checkbox" for="addinfocheckbox">I Accept to Reveive Additional
+                        Information
+                        <b>*</b></label>
+                </li>
+
+                <li>
+                    <label class="step2box__label--box">Additional Field 1 <b>*</b></label>
+                    <input type="text" class="step2box__textfld--box" name="additionalInfo"
+                        ng-model="step2.eventDetails.user.additionalInfo" required
+                        placeholder="Type in Your Placeholder Text" uib-tooltip="Additional Info is required"
+                        tooltip-placement="bottom-left"
+                        tooltip-enable="frmStep2.additionalInfo.$invalid && frmStep2.additionalInfo.$touched">
+                </li>
+
+                <li>
+                    <button class="step2box__submitform--btn" type="submit"
+                        ng-disabled="step2.$invalid ||  !step2.acceptCondition">
+                        Submit Form
+                    </button>
+                </li>
+
+            </ul>
+
+        </form>
     </div>
-    <form name="frmStep2" novalidate ng-submit="frmStep2.$valid && step2.save()">
-
-        <ul class="step2box__input--form">
-
-            <li>
-                <label class="step2box__label--box">Your Name <b>*</b></label>
-                <input type="text" class="step2box__textfld--box" name="name" ng-model="step2.eventDetails.user.name"
-                    ng-required="true" placeholder="Type in Your Full Name" uib-tooltip="Name is required"
-                    tooltip-placement="bottom-left" tooltip-enable="frmStep2.name.$invalid && frmStep2.name.$touched">
-            </li>
-
-            <li>
-                <label class="step2box__label--box">Email <b>*</b></label>
-                <input type="text" class="step2box__textfld--box" ng-model="step2.eventDetails.user.email" name="email"
-                    required placeholder="Type in Your Email Address" uib-tooltip="Email is required"
-                    tooltip-placement="bottom-left" tooltip-enable="frmStep2.email.$invalid && frmStep2.email.$touched">
-            </li>
-
-            <li>
-                <label class="step2box__label--box">Phone Number <b>*</b></label>
-                <input type="text" class="step2box__textfld--box" name="phoneNumber"
-                    ng-model="step2.eventDetails.user.phoneNumber" ng-intl-tel-input required
-                    uib-tooltip="Phone number is required" tooltip-placement="bottom-left"
-                    tooltip-enable="frmStep2.phoneNumber.$invalid && frmStep2.phoneNumber.$touched">
-            </li>
-
-            <li>
-                <input type="checkbox" class="step2box__checkbox" ng-model="step2.acceptCondition" id="addinfocheckbox">
-                <label class="step2box__label--checkbox" for="addinfocheckbox">I Accept to Reveive Additional
-                    Information
-                    <b>*</b></label>
-            </li>
-
-            <li>
-                <label class="step2box__label--box">Additional Field 1 <b>*</b></label>
-                <input type="text" class="step2box__textfld--box" name="additionalInfo"
-                    ng-model="step2.eventDetails.user.additionalInfo" required
-                    placeholder="Type in Your Placeholder Text" uib-tooltip="Additional Info is required"
-                    tooltip-placement="bottom-left"
-                    tooltip-enable="frmStep2.additionalInfo.$invalid && frmStep2.additionalInfo.$touched">
-            </li>
-
-            <li>
-                <button class="step2box__submitform--btn" type="submit"
-                    ng-disabled="step2.$invalid ||  !step2.acceptCondition">
-                    Submit Form
-                </button>
-            </li>
-
-        </ul>
-
-    </form>
 </div>
