@@ -44,6 +44,7 @@
             </div>
             <div style="display:inline-block; min-height:290px;">
                 <div uib-datepicker ng-model="step1.eventDetails.user.selectedDate"
+                    ng-change="step1.dateChange()"
                     datepicker-options="step1.eventDateOptions" class="well well-sm">
                 </div>
             </div>
@@ -51,8 +52,8 @@
                 <timezone-selector ng-model="step1.eventDetails.user.selectedTimezone"></timezone-selector>
             </div>
         </div>
-        <div class="step1box__selecttime--box" ng-if="step1.eventDetails.user.selectedDate">
-            <div class="step1box__selecttime--backbtn">
+        <div class="step1box__selecttime--box" ng-if="step1.eventDetails.user.selectedDate" id="hideBack">
+            <div class="step1box__selecttime--backbtn" ng-click="step1.hideBack()">
                 <img src="../assets/images/backbtn-icon.png">
             </div>
             <div class="step1box__st--title">

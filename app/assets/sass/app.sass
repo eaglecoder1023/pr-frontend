@@ -25,12 +25,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   -webkit-box-shadow: 0px 4px 10px 0px #d9e1e6
   -moz-box-shadow: 0px 4px 10px 0px #d9e1e6
   box-shadow: 0px 4px 10px 0px #d9e1e6
+  position: relative
 
 .card.withtime
     max-width: 1080px
     min-height: 610px
     overflow: hidden
     margin: 45px calc((100% - 1080px) / 2) 0
+    transition: all .3s cubic-bezier(.5,.3,.47,.81)
 
 /* Start of Step 1 Page CSS
 
@@ -124,10 +126,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
       
     &__selecttime--box
         width: 280px
+        display: none
         float: right
         min-height: 550px
         border-left: 1px solid #f0f4f7
         padding: 20px 20px 30px
+        position: absolute
+        right: 0
+        top: 0
 
     &__st--title
         width: 100%
@@ -152,7 +158,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         font-size: 18px
         color: #00919e
         padding-bottom: 18px
-        margin: 20px 0
+        margin: 18px 0 17px
         border-bottom: 1px solid #f0f4f7
 
     &__time--listing
@@ -196,6 +202,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 
         img
             margin-right: 5px
+
+.withtime .step1box__selecttime--box
+  display: block
+  transition: all .3s cubic-bezier(.5,.3,.47,.81)
+
 
 .step2box
   width: 100%
@@ -544,7 +555,8 @@ input.ng-invalid.ng-touched
 
   th:nth-child(2)
     float: left
-    width: calc(100% - 100px)
+    max-width: calc(100% - 100px)
+    pointer-events: none
 
     button
       font-size: 18px
@@ -620,8 +632,6 @@ input.ng-invalid.ng-touched
     display: none
     cursor: pointer
 
-
-
 /* Start of Responsive CSS */
 @media screen and (max-width: 1120px)
     .card
@@ -663,6 +673,7 @@ input.ng-invalid.ng-touched
     
     .step1box__selecttime--box
         width: 219px
+        position: relative
 
 @media screen and (max-width: 660px)
     .step1box__selecttime--backbtn
@@ -700,6 +711,17 @@ input.ng-invalid.ng-touched
       padding-bottom: 0
       margin: 7px 0 20px
       border-bottom: none
+
+    .step3box h2
+      text-align: center
+      
+      img
+        float: none
+        position: relative
+        top: -6px
+      
+      span
+        margin-left: 0px
 
 @media screen and (max-width: 450px)
     .card

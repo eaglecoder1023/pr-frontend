@@ -78,6 +78,22 @@ class CalendarStep1Controller {
         this.timeslots = getTimeSlot('12:00', '18:00', 30);
     }
 
+    hideBack() {
+        document.getElementById('hideBack').style.display = 'none';
+        var active = document.querySelector(".card"); 
+        active.classList.remove("withtime");
+    }
+
+    dateChange() {
+        try {
+            document.getElementById('hideBack').style.display = 'block';
+            var active = document.querySelector(".card"); 
+            active.classList.add("withtime");
+        } catch(e) {
+
+        }   
+    }
+
 }
 
 CalendarStep1Controller.$inject = ['$state'];
