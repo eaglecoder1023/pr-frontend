@@ -45,6 +45,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         padding: 30px
         background: #fcfdfe
         border-radius: 10px 0 0 10px
+        min-height: 590px
 
     &__meeting--personbox
         float: left
@@ -120,8 +121,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         padding: 13px 20px
         border-radius: 7px
         overflow: hidden
+
         img, video
           width: 100%
+
+        iframe
+          border-radius: 7px
+          overflow: hidden
 
     &__selectdate--box
         width: 401px
@@ -141,7 +147,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         top: 0
 
     &__st--title
-        width: 100%
+        width: calc(100% - 20px)
         float: left
         font-size: 19px
         color: #4d5055
@@ -156,7 +162,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
             position: relative
 
     &__day--box
-        width: 100%
+        width: calc(100% - 20px)
         float: left
         text-align: center
         font-weight: bold
@@ -212,6 +218,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 .withtime .step1box__selecttime--box
   display: block
   transition: all .3s cubic-bezier(.5,.3,.47,.81)
+
+.card.withtime .step1box__meetinginfo--box, .card.withtime .step1box__selectdate--box
+  min-height: 610px
+
 
 .customimagepadding
   position: relative
@@ -429,6 +439,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   padding: 8px 10px
   border-radius: 7px
   border-bottom: 1px solid #007a85
+  cursor: pointer
   img
     position: relative
     top: 4px
@@ -600,29 +611,32 @@ input.ng-invalid.ng-touched
   font-weight: 600
 
 
-.active span, .btn.btn-default.btn-sm span:hover
+.uib-daypicker .active span, .btn.btn-default.btn-sm span:hover
   height: 100%
   width: 100%
   display: inline-block
   font-size: 16px
-  font-weight: bold
+  font-weight: bold !important
   color: #fff !important
   border-radius: 100%
   border: 1px solid #00919e  !important
   padding: 9px
   background: #00919e !important
 
-.active span
+.text-info
   padding: 6px 9px !important
-  
-.active span:after
+
+.text-info:after
   content: ""
   height: 3px;
   width: 16px
-  background: #fff
+  background: #00919e
   position: absolute
   bottom: 7px
   left: 11px
+
+.active .text-info:after, .text-info:hover:after
+  background: #fff !important
 
 .btn.btn-default.btn-sm span
   height: 100%
@@ -671,6 +685,9 @@ input.ng-invalid.ng-touched
     display: none
     cursor: pointer
 
+.fullwidth
+  width: 100%
+
 /* Start of Responsive CSS */
 @media screen and (max-width: 1120px)
     .card
@@ -679,8 +696,13 @@ input.ng-invalid.ng-touched
         
     .step1box__meetinginfo--box
         width: 100%
-        border: 1px solid #f0f4f7
+        border-bottom: 1px solid #f0f4f7
+        min-height: auto !important
+        border-radius: 0
 
+    .step1box__selectdate--box
+      min-height: auto !important
+    
     .step1box__selectdate--box
       margin: 0 calc((100% - 401px) / 2)
       border-left: none
@@ -762,7 +784,14 @@ input.ng-invalid.ng-touched
       font-size: 21px
       margin-bottom: 20px
       margin-top: 10px
-      
+
+      span
+        span
+          top: 0
+          width: 100%
+          float: left
+          margin-bottom: 20px
+
       img
         float: none
         position: relative
@@ -856,7 +885,7 @@ input.ng-invalid.ng-touched
     .uib-day
       margin: 1px
 
-    .btn[disabled].btn-default.btn-sm span, .active span, .btn.btn-default.btn-sm span:hover, .btn.btn-default.btn-sm span
+    .btn[disabled].btn-default.btn-sm span, .uib-daypicker .active span, .btn.btn-default.btn-sm span:hover, .btn.btn-default.btn-sm span
       font-size: 13px
       font-weight: normal !important
 
@@ -871,7 +900,7 @@ input.ng-invalid.ng-touched
     .uib-daypicker.ng-scope thead tr:nth-child(2) th
       margin-bottom: 10px
  
-    .active span:after
+    .text-info:after
       height: 2px
       width: 13px
       bottom: 8px
