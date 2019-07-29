@@ -16,6 +16,7 @@ class CalendarStep1Controller {
             minDate: new Date(),
             showWeeks: false,
             dateDisabled: this.disabled,
+            customClass: this.getCustomClass
         }
     }
 
@@ -23,10 +24,27 @@ class CalendarStep1Controller {
      * Disabled Weekends
      */
     disabled(data) {
-        var date = data.date,
-            mode = data.mode;
+        const date = data.date, mode = data.mode;
         return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
     }
+
+    getCustomClass(data) {
+        const date = data.date, mode = data.mode;
+        let customClass = '';
+        if (mode === 'day') {
+            let monthToCheck = date.getMonth();
+
+            // 'this' refers to the datepicker's scope so you can get access to all it's goodies
+            let activeMonth = this.datepicker.activeDate.getMonth();
+
+            if (monthToCheck === activeMonth) {
+                customClass = 'datepicker-day-current-month';
+            }
+        }
+
+        return customClass;
+    }
+
 
 
     /**
@@ -80,18 +98,18 @@ class CalendarStep1Controller {
 
     hideBack() {
         document.getElementById('hideBack').style.display = 'none';
-        var active = document.querySelector(".card"); 
+        var active = document.querySelector(".card");
         active.classList.remove("withtime");
     }
 
     dateChange() {
         try {
             document.getElementById('hideBack').style.display = 'block';
-            var active = document.querySelector(".card"); 
+            var active = document.querySelector(".card");
             active.classList.add("withtime");
-        } catch(e) {
+        } catch (e) {
 
-        }   
+        }
     }
 
 }

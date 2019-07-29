@@ -1,3 +1,8 @@
+<style>
+    .uib-datepicker .uib-day:not(.datepicker-day-current-month) {
+        visibility: hidden;
+    }
+</style>
 <div class="card" ng-class="{'withtime' : step1.eventDetails.user.selectedDate}">
     <div class="step1box">
         <div class="step1box__meetinginfo--box">
@@ -43,8 +48,7 @@
                 <span>Select a Date</span>
             </div>
             <div style="display:inline-block; min-height:290px;">
-                <div uib-datepicker ng-model="step1.eventDetails.user.selectedDate"
-                    ng-change="step1.dateChange()"
+                <div uib-datepicker ng-model="step1.eventDetails.user.selectedDate" ng-change="step1.dateChange()"
                     datepicker-options="step1.eventDateOptions" class="well well-sm">
                 </div>
             </div>
@@ -67,7 +71,8 @@
                 <li class="list-group-item" ng-class="{'active' : step1.eventDetails.user.selectedTime ===  item}"
                     ng-click="step1.selectTime(item)" ng-repeat="item in step1.timeslots track by $index">{{item}}</li>
             </ul>
-            <button type="button" ng-click="step1.confirm()" class="step2box__submitform--btn">
+            <button ng-disabled="!step1.eventDetails.user.selectedTime" type="button" ng-click="step1.confirm()"
+                class="step2box__submitform--btn">
                 <img src="../assets/images/confirmbtn-icon.png">
                 <span>Confirm</span>
             </button>
