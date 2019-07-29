@@ -55,26 +55,27 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
     &__mpp--imagebox
         float: left
         width: 60px
-        margin-right: 15px  
+        margin-right: 12px  
     
     &__mpp--contentbox
         float: left
         width: calc(100% - 75px)
-        padding: 10px 0
+        padding: 8px 0
 
         h3
             margin: 0
             font-size: 17px
             color: #4d5055
-        
+            font-weight: bold
+
         h4
-            margin: 5px 0 0
+            margin: 1px 0 0
             font-size: 15px
             color: #4d5055
 
             img
                 float: left
-                margin-top: 1px
+                margin-top: 3px
                 margin-right: 4px
     
     &__meeting--title
@@ -82,8 +83,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         font-size: 22px
         color: #4d5055
         font-weight: 600
-        margin-bottom: 15px
+        margin-bottom: 20px
         width: 100%
+        line-height: 24px
     
     &__meeting--linkdec
         width: 100%
@@ -99,16 +101,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
             img
                 float: left
                 margin-right: 5px
-            
+
+            img.meetingdecicon
+              position: relative
+              top: 5px
+          
             span
                 float: right
-                width: calc(100% - 28px)
+                width: calc(100% - 27px)
                 color: #4d5055
                 font-size: 15px
-    
-    .customimagepadding
-        position: relative
-        top: 4px
+                line-height: 22px
+                word-break: break-word
+
 
     &__meeting--videobox
         width: 100%
@@ -130,7 +135,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         float: right
         min-height: 550px
         border-left: 1px solid #f0f4f7
-        padding: 20px 20px 30px
+        padding: 20px 10px 30px 30px
         position: absolute
         right: 0
         top: 0
@@ -146,8 +151,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         padding-bottom: 18px
 
         img
-            margin-right: 3px
-            top: - 2px
+            margin-right: 1px
+            top: - 1px
             position: relative
 
     &__day--box
@@ -176,7 +181,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
             border: 1px solid #00919e
             font-size: 17px
             color: #4d5055
-            margin: 0 10px
+            margin: 0 10px 0 0 
             margin-bottom: 10px
             border-radius: 7px
             padding: 12px 0
@@ -207,6 +212,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   display: block
   transition: all .3s cubic-bezier(.5,.3,.47,.81)
 
+.customimagepadding
+  position: relative
+  top: 6px
 
 .step2box
   width: 100%
@@ -244,7 +252,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   width: 100%
   font-size: 14px
   font-weight: 600
-  margin-bottom: 3px
+  margin-bottom: 5px
   b
     color: #f00
 
@@ -319,11 +327,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   font-weight: bold
   float: left
   padding: 3px 10px
+  width: calc(100% - 30px)
   b
     color: #f00
 
 .step2box__submitform--btn
-  width: 100%
+  width: calc(100% - 20px)
   float: left
   height: 55px
   font-size: 22px
@@ -331,16 +340,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   font-weight: 600
   color: #fff
   padding: 8px 10px
+  margin: 0 10px 0 0
   border-radius: 8px
   border: none
   background: #ff9913
   outline: none !important
+  cursor: pointer
+
+  img
+    position: relative
+    top: -3px
 
 .step3box
   max-width: 355px
   float: left
   margin: 0 calc((100% - 355px) / 2)
   padding: 30px 0
+
   h2
     margin: 0
     font-size: 22px
@@ -349,9 +365,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 
     img
       float: left
+      position: relative
+      top: -2px
 
     span
-      margin-left: 5px
+      margin-left: 7px
       position: relative
       position: relative
       top: -4px
@@ -382,9 +400,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
     font-weight: 400
     float: left
     img
-      margin-top: -2px
-      margin-right: 6px
-
+      margin-top: 3px
+      margin-right: 4px
+      float: left
+    span
+      word-break: break-all
+      
 .step3box .step3box__stetl-box
   float: left
   margin-right: 15px
@@ -392,7 +413,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 .step3box__dropdown--box
   width: 100%
   float: left
-  margin-top: 15px
+  margin-top: 10px
   margin-bottom: 15px
   position: relative
 
@@ -403,7 +424,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   background: #00a0af
   font-size: 20px
   text-transform: uppercase
-  font-weight: 600
+  font-weight: bold
   color: #fff
   padding: 8px 10px
   border-radius: 7px
@@ -422,6 +443,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   border-style: solid
   border-width: 6px 5px 0 5px
   border-color: #fff transparent transparent transparent
+  margin-right: 5px
 
 .step3box__dropdown--value
   width: 100%
@@ -432,6 +454,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   -webkit-box-shadow: 0px 4px 10px 0px #d9e1e6
   -moz-box-shadow: 0px 4px 10px 0px #d9e1e6
   box-shadow: 0px 4px 10px 0px #d9e1e6
+
   li
     width: 100%
     font-size: 19px
@@ -523,7 +546,7 @@ input.ng-invalid.ng-touched
   position: relative
 
   th
-    width: 50px
+    width: 40px
     float: right
 
     button
@@ -543,6 +566,7 @@ input.ng-invalid.ng-touched
       font-size: 20px
       color: #00919e
       padding-top: 2px
+      text-align: right
 
   th:nth-child(1)
     position: absolute
@@ -552,10 +576,11 @@ input.ng-invalid.ng-touched
       font-size: 20px
       color: #00919e
       padding-top: 2px
+      text-align: left
 
   th:nth-child(2)
     float: left
-    max-width: calc(100% - 100px)
+    max-width: calc(100% - 80px)
     pointer-events: none
 
     button
@@ -568,10 +593,11 @@ input.ng-invalid.ng-touched
 .uib-daypicker.ng-scope thead tr:nth-child(2) th
   width: calc(100% / 7)
   float: left
-  font-size: 14px
+  font-size: 13px
   color: #4d5055
   text-transform: uppercase
   margin-bottom: 15px
+  font-weight: 600
 
 
 .active .text-info, .btn.btn-default.btn-sm span:hover
@@ -586,17 +612,30 @@ input.ng-invalid.ng-touched
   padding: 9px
   background: #00919e !important
 
+.active .text-info
+  padding: 6px 9px !important
+  
+.active .text-info:after
+  content: ""
+  height: 3px;
+  width: 16px
+  background: #fff
+  position: absolute
+  bottom: 7px
+  left: 11px
+
 .btn.btn-default.btn-sm span
   height: 100%
   width: 100%
   display: inline-block
   font-size: 16px
-  font-weight: bold
+  font-weight: 600
   color: #00919e
   border-radius: 100%
   border: 1px solid #ddeef0
   padding: 9px
   background: #f0f9f9
+  position: relative
   
 .btn[disabled].btn-default.btn-sm span
   height: 100%
@@ -635,7 +674,7 @@ input.ng-invalid.ng-touched
 /* Start of Responsive CSS */
 @media screen and (max-width: 1120px)
     .card
-        margin: 45px calc((100% - 620px) / 2) 0 !important
+        margin: 45px calc((100% - 620px) / 2) 30px !important
         max-width: 620px !important
         
     .step1box__meetinginfo--box
@@ -679,13 +718,14 @@ input.ng-invalid.ng-touched
     .step1box__selecttime--backbtn
       display: block
     .card
-        margin: 20px !important
-        max-width: calc(100% - 40px) !important
+        margin: 10px !important
+        max-width: calc(100% - 20px) !important
 
     .step2box, .step3box
         max-width: 100%
         margin: 0
         padding: 20px
+        min-height: calc(100vh - 20px)
 
     .step1box__selectdate--box
       margin: 0 calc((100% - 401px) / 2) !important
@@ -702,6 +742,11 @@ input.ng-invalid.ng-touched
       top: 0
       background: #fff
       right: 0
+      min-height: calc(100vh - 0px)
+
+    .step1box__time--listing
+      height: calc(100vh - 220px)
+      margin-bottom: 20px
 
     .step1box__st--title
       border-bottom: 0
@@ -714,6 +759,9 @@ input.ng-invalid.ng-touched
 
     .step3box h2
       text-align: center
+      font-size: 21px
+      margin-bottom: 20px
+      margin-top: 10px
       
       img
         float: none
@@ -722,14 +770,69 @@ input.ng-invalid.ng-touched
       
       span
         margin-left: 0px
+    
+    .step3box h4, .step3box__website--btn, .step1box__meeting--linkdec li:nth-child(1), .step1box__meeting--linkdec li img
+      display: none
+
+    .step1box__meeting--linkdec li
+      text-align: center
+      
+      span
+        width: 100%
+    
+    .step3box__dropdown--btn
+      font-size: 18px
+      padding: 10px
+
+      img
+        top: 3px
+
+    .step3box .downarrow
+      margin-top: 10px
+
+    .step3box__Time--listing
+      padding-left: 5px
+    
+    .step2box__submitform--btn
+      height: 50px
+      margin-top: 20px
+
+    .step1box__meeting--personbox
+      text-align: center
+      margin: 0
+
+    .step1box__meeting--title
+      margin-bottom: 7px
+
+    .step1box__mpp--imagebox
+      margin: 0 10px 0  0
+      float: none
+      display: inline-block
+      position: relative
+      top: -13px
+
+    .step1box__mpp--contentbox
+      width: auto
+      text-align: left
+      float: none
+      display: inline-block
+
+    .step1box__meeting--videobox
+      padding: 0
+
+@media screen and (max-width: 400px)
+  .step2box__label--checkbox
+    padding: 0px 10px
+    margin-top: -3px
+    line-height: 15px
 
 @media screen and (max-width: 450px)
     .card
-        margin: 15px !important
-        max-width: calc(100% - 30px) !important
+        margin: 10px !important
+        max-width: calc(100% - 20px) !important
 
     .step2box, .step3box
-        padding: 20px 15px
+        padding: 20px
 
     .step3box__Time--listing li
         font-size: 15px
@@ -743,24 +846,38 @@ input.ng-invalid.ng-touched
     .step3box .step3box__stetl-box:nth-child(3)
         margin: 0
 
-    .step1box__meetinginfo--box, .step1box__selectdate--box
-        padding: 20px 15px
+    .step1box__meetinginfo--box
+        padding: 20px
 
     .btn.btn-default.btn-sm
-      height: 30px
-      width: 30px
+      height: 37px
+      width: 37px
 
     .uib-day
-      margin: 3px
+      margin: 1px
 
     .btn[disabled].btn-default.btn-sm span, .active .text-info, .btn.btn-default.btn-sm span:hover, .btn.btn-default.btn-sm span
       font-size: 13px
-      padding: 5px
       font-weight: normal !important
 
     .step1box__selectdate--box
       margin: 0 calc((100% - 290px) / 2) !important
       width: 290px
+      padding: 20px 0
+
+    .uib-daypicker.ng-scope thead tr:first-child
+      padding: 10px
+
+    .uib-daypicker.ng-scope thead tr:nth-child(2) th
+      margin-bottom: 10px
+ 
+    .active .text-info:after
+      height: 2px
+      width: 13px
+      bottom: 8px
+    
+    .well
+      margin: 0
  
 
 /* End of Responsive CSS */
