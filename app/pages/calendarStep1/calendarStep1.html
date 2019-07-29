@@ -72,7 +72,7 @@
                     ng-click="step1.selectTime(item)" ng-repeat="item in step1.timeslots track by $index">{{item}}</li>
             </ul>
             <button ng-disabled="!step1.eventDetails.user.selectedTime" type="button" ng-click="step1.confirm()"
-                class="step2box__submitform--btn">
+                class="step1box__confirm--btn">
                 <img src="../assets/images/confirmbtn-icon.png">
                 <span>Confirm</span>
             </button>

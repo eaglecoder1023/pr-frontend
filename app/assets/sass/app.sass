@@ -30,7 +30,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 .card.withtime
     max-width: 1080px
     min-height: 610px
-    overflow: hidden
     margin: 45px calc((100% - 1080px) / 2) 0
     transition: all .3s cubic-bezier(.5,.3,.47,.81)
 
@@ -193,8 +192,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
             color: #fff
 
     &__confirm--btn
-        margin-top: 20px
-        width: 100%
+        width: calc(100% - 20px)
         float: left
         height: 50px
         font-size: 17px
@@ -206,7 +204,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         border: none
 
         img
-            margin-right: 5px
+          position: relative
+          top: -3px
+          margin-right: 5px
 
 .withtime .step1box__selecttime--box
   display: block
@@ -332,7 +332,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
     color: #f00
 
 .step2box__submitform--btn
-  width: calc(100% - 20px)
+  width: 100%
   float: left
   height: 55px
   font-size: 22px
@@ -346,10 +346,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   background: #ff9913
   outline: none !important
   cursor: pointer
-
-  img
-    position: relative
-    top: -3px
 
 .step3box
   max-width: 355px
@@ -793,7 +789,7 @@ input.ng-invalid.ng-touched
     .step3box__Time--listing
       padding-left: 5px
     
-    .step2box__submitform--btn
+    .step2box__submitform--btn, .step1box__confirm--btn
       height: 50px
       margin-top: 20px
 
