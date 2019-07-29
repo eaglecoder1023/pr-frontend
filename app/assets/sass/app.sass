@@ -118,7 +118,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         width: 100%
         float: right
         padding: 13px 20px
-
+        border-radius: 7px
+        overflow: hidden
         img, video
           width: 100%
 
@@ -182,7 +183,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
             color: #4d5055
             margin: 0 10px 0 0 
             margin-bottom: 10px
-            border-radius: 7px
+            border-radius: 7px !important
             padding: 12px 0
             cursor: pointer
 
@@ -379,8 +380,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 
 .step3box__video--box
   width: 100%
-  img
+  border-radius: 7px
+  overflow: hidden
+  img, iframe
     width: 100%
+    min-height: 200px
 
 .step3box__Time--listing
   width: 100%
@@ -596,7 +600,7 @@ input.ng-invalid.ng-touched
   font-weight: 600
 
 
-.active .text-info, .btn.btn-default.btn-sm span:hover
+.active span, .btn.btn-default.btn-sm span:hover
   height: 100%
   width: 100%
   display: inline-block
@@ -608,10 +612,10 @@ input.ng-invalid.ng-touched
   padding: 9px
   background: #00919e !important
 
-.active .text-info
+.active span
   padding: 6px 9px !important
   
-.active .text-info:after
+.active span:after
   content: ""
   height: 3px;
   width: 16px
@@ -852,7 +856,7 @@ input.ng-invalid.ng-touched
     .uib-day
       margin: 1px
 
-    .btn[disabled].btn-default.btn-sm span, .active .text-info, .btn.btn-default.btn-sm span:hover, .btn.btn-default.btn-sm span
+    .btn[disabled].btn-default.btn-sm span, .active span, .btn.btn-default.btn-sm span:hover, .btn.btn-default.btn-sm span
       font-size: 13px
       font-weight: normal !important
 
@@ -867,7 +871,7 @@ input.ng-invalid.ng-touched
     .uib-daypicker.ng-scope thead tr:nth-child(2) th
       margin-bottom: 10px
  
-    .active .text-info:after
+    .active span:after
       height: 2px
       width: 13px
       bottom: 8px

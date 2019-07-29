@@ -71,7 +71,7 @@ class CalendarStep1Controller {
             title: 'Strategy Call GMM Members Only',
             location: 'https://us04web.zoom.us/j/861483882',
             description: 'Please choose a date and time that suits you to have a chat with David about your project. This call is about the roadmap and strategic planning of your business.',
-            videoUrl: 'assets/images/videoimage.png',
+            videoUrl: 'https://www.youtube.com/embed/mPCDQ34S8Rs',
             user: {
                 selectedDate: null,
                 selectedTimezone: moment.tz.guess(),
