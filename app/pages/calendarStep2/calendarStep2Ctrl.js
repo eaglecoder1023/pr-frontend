@@ -10,6 +10,15 @@ class CalendarStep2Controller {
         this.$state = $state;
     }
 
+
+    emailValidation(form) {
+        return form.email && form.email.$error.pattern ? 'Email is invalid' : 'Email is required';
+    }
+
+    phoneValidation(form) {
+        return form.phoneNumber && form.phoneNumber.$error.ngIntlTelInput ? 'Phone number is invalid' : 'Phone number is required';
+    }
+
     /**
      * Step2 Submit Event
      * Store latest data and route to next step
