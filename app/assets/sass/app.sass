@@ -140,6 +140,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
         position: relative
         z-index: 5
         background: #fff
+        border-radius: 0 10px 10px 0
       
     &__selecttime--box
         width: 280px
@@ -198,7 +199,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
             border-radius: 7px !important
             padding: 12px 0
             cursor: pointer
-
+            -o-transition: .5s
+            -moz-transition: .5s
+            -webkit-transition: .5s
+            transition: .5s
         li:hover, li.active
             background: #00919e !important
             font-weight: bold
@@ -733,7 +737,7 @@ input.ng-invalid.ng-touched
         width: 100%
         border-bottom: 1px solid #f0f4f7
         min-height: auto !important
-        border-radius: 0
+        border-radius: 10px 10px 0 0
 
     .step1box__selectdate--box
       min-height: auto !important
