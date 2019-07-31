@@ -10,7 +10,9 @@
         </h4>
 
         <div class="step3box__video--box">
-            <iframe width="100%" src="https://www.youtube.com/embed/mPCDQ34S8Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" src="https://www.youtube.com/embed/mPCDQ34S8Rs" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
 
         <ul class="step3box__Time--listing">
@@ -38,13 +40,13 @@
             </li>
         </ul>
 
-        <div class="step3box__dropdown--box">
-            <div class="step3box__dropdown--btn" ng-click="showMenu = !showMenu">
+        <div class="step3box__dropdown--box" uib-dropdown is-open="step3.showMenu">
+            <div class="step3box__dropdown--btn" uib-dropdown-toggle>
                 <img src="../assets/images/db-calendar-icon.png">
                 <span>Add to calendar</span>
                 <div class="downarrow"></div>
             </div>
-            <ul class="step3box__dropdown--value" ng-show="showMenu">
+            <ul class="step3box__dropdown--value" uib-dropdown-menu>
                 <li>
                     <img src="../assets/images/sv-google-icon.png">
                     <span>Google Calendar</span>

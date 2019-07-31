@@ -2,6 +2,7 @@ import angular from 'angular';
 import uirouter from '@uirouter/angularjs';
 import datepicker from 'angular-ui-bootstrap/src/datepicker';
 import tooltip from 'angular-ui-bootstrap/src/tooltip';
+import dropdown from 'angular-ui-bootstrap/src/dropdown';
 
 import $ from "jquery"
 
@@ -28,7 +29,7 @@ class AppController {
   }
 }
 
-angular.module('calendarApp', [uirouter, datepicker, tooltip, 'ngIntlTelInput', 'angular-timezone-selector'])
+angular.module('calendarApp', [uirouter, datepicker, tooltip, dropdown, 'ngIntlTelInput', 'angular-timezone-selector'])
   .controller('CalendarStep1Controller', CalendarStep1Controller)
   .controller('CalendarStep2Controller', CalendarStep2Controller)
   .controller('CalendarStep3Controller', CalendarStep3Controller)
