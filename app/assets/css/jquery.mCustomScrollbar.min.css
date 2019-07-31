@@ -296,10 +296,10 @@
     background-color: #ebf3f4;
 }
 .mCS-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
-    background-color: #ff9913;
+    background-color: #ccc;
 }
 .mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar, .mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
-    background-color: #ff9913;
+    background-color: #ccc;
 }
 .mCS-dark.mCSB_scrollTools .mCSB_buttonUp {
     background-position: -80px 0;
@@ -593,8 +593,6 @@
     background-position: center;
 }
 .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail, .mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail {
-    background-image: url(data:image/png;
-    base64, iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYV2NkIAAYiVbw//9/Y6DiM1ANJoyMjGdBbLgJQAX/kU0DKgDLkaQAvxW4HEvQFwCRcxIJK1XznAAAAABJRU5ErkJggg==);
     background-repeat: repeat-y;
     opacity: .3;
     filter: "alpha(opacity=30)";
@@ -617,8 +615,6 @@
     background-position: -20px -128px;
 }
 .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail {
-    background-image: url(data:image/png;
-    base64, iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAALElEQVQYV2NkIAAYSVFgDFR8BqrBBEifBbGRTfiPZhpYjiQFBK3A6l6CvgAAE9kGCd1mvgEAAAAASUVORK5CYII=);
 }
 .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_buttonUp {
     background-position: -96px -72px;
