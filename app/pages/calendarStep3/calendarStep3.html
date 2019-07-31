@@ -2,7 +2,7 @@
     <div class="step3box">
         <h2>
             <img src="assets/images/header-tick.png">
-            <span>Congrats!<span>You Are Scheduled</span>
+            <span>Congrats! <b>You Are Scheduled</b>
         </h2>
 
         <h4>
@@ -20,7 +20,7 @@
             </li>
             <li>
                 <img src="assets/images/tl-Location.png">
-                <span>{{step3.eventDetails.location}}</span>
+                <span class="time-listing-span">{{step3.eventDetails.location}}</span>
             </li>
             <li>
                 <div class="step3box__stetl-box">
@@ -38,13 +38,13 @@
             </li>
         </ul>
 
-        <div class="step3box__dropdown--box">
-            <div class="step3box__dropdown--btn" ng-click="showMenu = !showMenu">
+        <div class="step3box__dropdown--box" uib-dropdown is-open="step3.showMenu">
+            <div class="step3box__dropdown--btn" uib-dropdown-toggle>
                 <img src="../assets/images/db-calendar-icon.png">
                 <span>Add to calendar</span>
                 <div class="downarrow"></div>
             </div>
-            <ul class="step3box__dropdown--value" ng-show="showMenu">
+            <ul class="step3box__dropdown--value" uib-dropdown-menu>
                 <li>
                     <img src="../assets/images/sv-google-icon.png">
                     <span>Google Calendar</span>
