@@ -12,7 +12,10 @@
                 <li>
                     <label class="step2box__label--box">Your Name <b>*</b></label>
                     <input type="text" class="step2box__textfld--box" name="name"
-                        ng-model="step2.eventDetails.user.name" ng-required="true" placeholder="Type in Your Full Name"
+                        ng-model="step2.eventDetails.user.name" ng-required="true"
+                        placeholder="Type in Your Full Name"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Type in Your Full Name'"
                         uib-tooltip="Name is required" tooltip-placement="bottom-left"
                         tooltip-is-open="frmStep2.name.$invalid && (frmStep2.name.$touched || frmStep2.$submitted)"
                         tooltip-enable="frmStep2.name.$invalid && (frmStep2.name.$touched || frmStep2.$submitted)">
@@ -22,7 +25,10 @@
                     <label class="step2box__label--box">Email <b>*</b></label>
                     <input type="text" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" class="step2box__textfld--box"
                         ng-model="step2.eventDetails.user.email" name="email" required
-                        placeholder="Type in Your Email Address" uib-tooltip="{{step2.emailValidation(frmStep2)}}"
+                        placeholder="Type in Your Email Address"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Type in Your Email Address'"
+                        uib-tooltip="{{step2.emailValidation(frmStep2)}}"
                         tooltip-placement="bottom-left"
                         tooltip-is-open="frmStep2.email.$invalid && (frmStep2.email.$touched || frmStep2.$submitted)"
                         tooltip-enable="frmStep2.email.$invalid && (frmStep2.email.$touched  || frmStep2.$submitted)">
@@ -31,6 +37,9 @@
                 <li>
                     <label class="step2box__label--box">Phone Number <b>*</b></label>
                     <input type="text" class="step2box__textfld--box" name="phoneNumber"
+                        placeholder="(201) 555-5555"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = '(201) 555-5555'"
                         ng-model="step2.eventDetails.user.phoneNumber" ng-intl-tel-input required
                         uib-tooltip="{{step2.phoneValidation(frmStep2)}}" tooltip-placement="bottom-left"
                         tooltip-is-open="frmStep2.phoneNumber.$invalid && (frmStep2.phoneNumber.$touched || frmStep2.$submitted)"
@@ -48,7 +57,11 @@
                 <li>
                     <label class="step2box__label--box">Additional Field 1</label>
                     <input type="text" class="step2box__textfld--box" name="additionalInfo"
-                        ng-model="step2.eventDetails.user.additionalInfo" placeholder="Type in Your Placeholder Text">
+                    ng-model="step2.eventDetails.user.additionalInfo"
+                    placeholder="Type in Your Placeholder Text"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Type in Your Placeholder Text'"
+                    >
                 </li>
 
                 <li>
