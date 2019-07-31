@@ -434,3 +434,26 @@ i.glyphicon.glyphicon-chevron-left::before { display: none; }
 
 i.glyphicon.glyphicon-chevron-right { background: url(../images/calendar-next-icon.png) no-repeat; height: 18px; width: 11px; top: 5px; } 
 i.glyphicon.glyphicon-chevron-right::before { display: none; } 
+
+[style*="--aspect-ratio"] > :first-child {
+    width: 100%;
+  }
+  [style*="--aspect-ratio"] > img {  
+    height: auto;
+  } 
+  @supports (--custom:property) {
+    [style*="--aspect-ratio"] {
+      position: relative;
+    }
+    [style*="--aspect-ratio"]::before {
+      content: "";
+      display: block;
+      padding-bottom: calc(100% / (var(--aspect-ratio)));
+    }  
+    [style*="--aspect-ratio"] > :first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }  
+}
