@@ -69,6 +69,10 @@ angular.module('ngIntlTelInput')
           ctrl.$validators.ngIntlTelInput = function (value) {
             // if phone number is deleted / empty do not run phone number validation
             if (value || elm[0].value.length > 0) {
+              var tempValid = $(elm).intlTelInput('isValidNumber');
+              if (!tempValid) {
+                scope.step2.mobileErrorCode = $(elm).intlTelInput('getValidationError');
+              }
               return $(elm).intlTelInput('isValidNumber');
             } else {
               return true;

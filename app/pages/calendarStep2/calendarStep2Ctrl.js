@@ -8,6 +8,15 @@ class CalendarStep2Controller {
      */
     constructor($state) {
         this.$state = $state;
+
+
+        this.mobileErrorCodeData = {
+            1: 'Country code is invalid',
+            0: 'Is Possible',
+            4: 'Input is invalid',
+            3: 'Input is too long',
+            2: 'Input is too short'
+        }
     }
 
 
@@ -16,7 +25,7 @@ class CalendarStep2Controller {
     }
 
     phoneValidation(form) {
-        return form.phoneNumber && form.phoneNumber.$error.ngIntlTelInput ? 'Phone number is invalid' : 'Phone number is required';
+        return form.phoneNumber && form.phoneNumber.$error.ngIntlTelInput ? this.mobileErrorCodeData[this.mobileErrorCode] : 'Phone number is required';
     }
 
     /**
