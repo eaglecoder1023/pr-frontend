@@ -29,69 +29,109 @@ angular.module('ngIntlTelInput', []); angular.module('ngIntlTelInput')
   });
 angular.module('ngIntlTelInput')
   .directive('ngIntlTelInput', ['ngIntlTelInput', '$log', '$window', '$parse',
-    function (ngIntlTelInput, $log, $window, $parse) {
+    function (ngIntlTelInput, $log) {
       return {
         restrict: 'A',
         require: 'ngModel',
         link: function (scope, elm, attr, ctrl) {
           // Warning for bad directive usage.
-          if ((!!attr.type && (attr.type !== 'text' && attr.type !== 'tel')) || elm[0].tagName !== 'INPUT') {
-            $log.warn('ng-intl-tel-input can only be applied to a *text* or *tel* input');
+          if (attr.type !== 'text' || elm[0].tagName !== 'INPUT') {
+            $log.warn('ng-intl-tel-input can only be applied to a *text* input');
             return;
           }
           // Override default country.
-          if (attr.initialCountry) {
-            ngIntlTelInput.set({ initialCountry: attr.initialCountry });
+          if (attr.defaultCountry) {
+            ngIntlTelInput.set({ defaultCountry: attr.defaultCountry });
           }
           // Initialize.
-          ngIntlTelInput.init(elm);
-          // Set Selected Country Data.
-          function setSelectedCountryData(model) {
-            var getter = $parse(model);
-            var setter = getter.assign;
-            setter(scope, $(elm).intlTelInput('getSelectedCountryData'));
-          }
-          // Handle Country Changes.
-          function handleCountryChange() {
-            setSelectedCountryData(attr.selectedCountry);
-          }
-          // Country Change cleanup.
-          function cleanUp() {
-            angular.element($window).off('countrychange', handleCountryChange);
-          }
-          // Selected Country Data.
-          if (attr.selectedCountry) {
-            setSelectedCountryData(attr.selectedCountry);
-            angular.element($window).on('countrychange', handleCountryChange);
-            scope.$on('$destroy', cleanUp);
-          }
+          ngIntlTelInput.init($(elm));
           // Validation.
           ctrl.$validators.ngIntlTelInput = function (value) {
-            // if phone number is deleted / empty do not run phone number validation
-            if (value || elm[0].value.length > 0) {
-              var tempValid = $(elm).intlTelInput('isValidNumber');
-              if (!tempValid) {
-                scope.step2.mobileErrorCode = $(elm).intlTelInput('getValidationError');
-              }
-              return $(elm).intlTelInput('isValidNumber');
-            } else {
-              return true;
+
+            var tempValid = $(elm).intlTelInput('isValidNumber');
+            if (!tempValid) {
+              scope.step2.mobileErrorCode = $(elm).intlTelInput('getValidationError');
             }
+
+            return $(elm).intlTelInput("isValidNumber");
           };
           // Set model value to valid, formatted version.
           ctrl.$parsers.push(function (value) {
-            return $(elm).intlTelInput('getNumber');
+            return $(elm).intlTelInput('getNumber').replace(/[^\d]/, '');
           });
           // Set input value to model value and trigger evaluation.
           ctrl.$formatters.push(function (value) {
             if (value) {
-              if (value.charAt(0) !== '+') {
-                value = '+' + value;
-              }
+              value = value.charAt(0) === '+' || '+' + value;
               $(elm).intlTelInput('setNumber', value);
             }
             return value;
           });
+
+          elm.bind('keydown', function (event) {
+            ctrl.$setViewValue(event.currentTarget.value);
+            ctrl.$render();
+          })
         }
+        // link: function (scope, elm, attr, ctrl) {
+        //   // Warning for bad directive usage.
+        //   if ((!!attr.type && (attr.type !== 'text' && attr.type !== 'tel')) || elm[0].tagName !== 'INPUT') {
+        //     $log.warn('ng-intl-tel-input can only be applied to a *text* or *tel* input');
+        //     return;
+        //   }
+        //   // Override default country.
+        //   if (attr.initialCountry) {
+        //     ngIntlTelInput.set({ initialCountry: attr.initialCountry });
+        //   }
+        //   // Initialize.
+        //   ngIntlTelInput.init(elm);
+        //   // Set Selected Country Data.
+        //   function setSelectedCountryData(model) {
+        //     var getter = $parse(model);
+        //     var setter = getter.assign;
+        //     setter(scope, $(elm).intlTelInput('getSelectedCountryData'));
+        //   }
+        //   // Handle Country Changes.
+        //   function handleCountryChange() {
+        //     setSelectedCountryData(attr.selectedCountry);
+        //   }
+        //   // Country Change cleanup.
+        //   function cleanUp() {
+        //     angular.element($window).off('countrychange', handleCountryChange);
+        //   }
+        //   // Selected Country Data.
+        //   if (attr.selectedCountry) {
+        //     setSelectedCountryData(attr.selectedCountry);
+        //     angular.element($window).on('countrychange', handleCountryChange);
+        //     scope.$on('$destroy', cleanUp);
+        //   }
+        //   // Validation.
+        //   ctrl.$validators.ngIntlTelInput = function (value) {
+        //     // if phone number is deleted / empty do not run phone number validation
+        //     if (value || elm[0].value.length > 0) {
+        //       var tempValid = $(elm).intlTelInput('isValidNumber');
+        //       if (!tempValid) {
+        //         scope.step2.mobileErrorCode = $(elm).intlTelInput('getValidationError');
+        //       }
+        //       return $(elm).intlTelInput('isValidNumber');
+        //     } else {
+        //       return true;
+        //     }
+        //   };
+        //   // Set model value to valid, formatted version.
+        //   ctrl.$parsers.push(function (value) {
+        //     return $(elm).intlTelInput('getNumber');
+        //   });
+        //   // Set input value to model value and trigger evaluation.
+        //   ctrl.$formatters.push(function (value) {
+        //     if (value) {
+        //       if (value.charAt(0) !== '+') {
+        //         value = '+' + value;
+        //       }
+        //       $(elm).intlTelInput('setNumber', value);
+        //     }
+        //     return value;
+        //   });
+        // }
       };
     }]);
