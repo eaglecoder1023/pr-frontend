@@ -68,6 +68,11 @@ angular.module('ngIntlTelInput')
             return value;
           });
 
+          elm.bind('blur', function (event) {
+            ctrl.$setViewValue(event.currentTarget.value);
+            ctrl.$render();
+          })
+
           elm.bind('keydown', function (event) {
             ctrl.$setViewValue(event.currentTarget.value);
             ctrl.$render();
